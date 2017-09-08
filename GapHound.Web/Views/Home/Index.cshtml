@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Solve Maze";
+}
+@model GapHound.Web.Models.InputModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h2>Hound</h2>
+    @using (Html.BeginForm("SolveMaze", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div>
+            @Html.TextBox("file", "", new { type = "file" }) <br />
+            @Html.Label("Positions (With ofsset)")
+            @Html.TextBoxFor(model => model.X1)
+            @Html.TextBoxFor(model => model.Y1)
+            @Html.TextBoxFor(model => model.X2)
+            @Html.TextBoxFor(model => model.Y2)
+            @Html.ValidationMessageFor(model => model.X1)
+            @Html.ValidationMessageFor(model => model.Y1)
+            @Html.ValidationMessageFor(model => model.X2)
+            @Html.ValidationMessageFor(model => model.Y2) <br />
+            <input type="submit" value="Solve!" />
+
+            @ViewBag.Message
+        </div>
+    }
+</body>
+</html>
