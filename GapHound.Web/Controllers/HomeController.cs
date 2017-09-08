@@ -28,10 +28,10 @@ namespace GapHound.Web.Controllers
                     file.InputStream.Read(content, 0, (int)file.InputStream.Length - 1);
                     if (mh.SolveMaze(System.Text.Encoding.UTF8.GetString(content), model.X1, model.Y1, model.X2, model.Y2, 5, 5))
                     {
-                        return Json(new ResponseModel() { email = "norman.munoz@gmail.com", repo = "https://github.com/nhmunoz/GapHound", solution = mh.Path });
+                        return Json(new ResponseModel() { email = "norman.munoz@gmail.com", repo = "https://github.com/nhmunoz/GAPHoundChallenge", solution = mh.Path });
                     }
                 }
-                return Json(new ResponseModel() { email = "norman.munoz@gmail.com", repo = "https://github.com/nhmunoz/GapHound", solution = "" });
+                return Json(new ResponseModel() { email = "norman.munoz@gmail.com", repo = "https://github.com/nhmunoz/GAPHoundChallenge", solution = "" });
             }
             catch
             {
